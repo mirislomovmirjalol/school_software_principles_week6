@@ -17,6 +17,10 @@ public class University {
         people.add(person);
     }
 
+    public void removePerson(Person person) {
+        people.remove(person);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
