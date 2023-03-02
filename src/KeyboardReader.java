@@ -25,7 +25,7 @@ public class KeyboardReader {
                 return retv;
             } catch (NumberFormatException e) {
                 System.out.println("only valid integers are allowed");
-                System.out.print("Please try again : ");
+                System.out.print("Please try again!");
             }
         } while (!valid);
         return retv;
