@@ -7,10 +7,12 @@ public class University {
     private String filePath = "src/data.csv";
     private ArrayList<Person> people;
     private String name;
+    private ArrayList<Module> modules;
 
     public University(String name) {
         setName(name);
         people = new ArrayList<Person>();
+        modules = new ArrayList<Module>();
     }
 
     public void addPerson(Person person) {
@@ -75,6 +77,38 @@ public class University {
         if (person != null) {
             people.add(person);
         }
+    }
 
+    public ArrayList<Module> getModules() {
+        return modules;
+    }
+
+    public ArrayList<Lecturer> getLecturers() {
+        ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>();
+        for (Person person : people) {
+            if (person instanceof Lecturer) {
+                lecturers.add((Lecturer) person);
+            }
+        }
+        return lecturers;
+    }
+
+    public ArrayList<Student> getStudents() {
+        ArrayList<Student> students = new ArrayList<Student>();
+        for (Person person : people) {
+            if (person instanceof Student) {
+                students.add((Student) person);
+            }
+        }
+        return students;
+    }
+
+    public Lecturer getLecturerByName(String name) {
+        for (Lecturer lecturer : getLecturers()) {
+            if (lecturer.getName().equals(name)) {
+                return lecturer;
+            }
+        }
+        return null;
     }
 }
