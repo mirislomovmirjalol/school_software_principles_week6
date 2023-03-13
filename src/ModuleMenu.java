@@ -132,6 +132,4 @@ public class ModuleMenu extends Menu {
         Module module = new Module(title, lecturer, university);
         modules.add(module);
     }
-
-
 }
